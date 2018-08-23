@@ -1,0 +1,26 @@
+13 Lines: https://iamtrask.github.io/2015/07/27/python-network-part2/
+
+overview: https://deeplearning4j.org/cn/neuralnet-overview
+
+Stochastic Gradient Descent随机梯度下降 https://www.cnblogs.com/ooon/p/4947688.html, https://www.cnblogs.com/sirius-swu/p/6932583.html
+
+Backpropagation: 反向传播  https://blog.csdn.net/xierhacker/article/details/53431207
+
+“交叉熵”（cross-entropy）http://colah.github.io/posts/2015-09-Visual-Information/
+
+Convolutions & Convolutions NN: http://colah.github.io/posts/2014-07-Understanding-Convolutions/
+
+回忆：卷积https://en.wikipedia.org/wiki/Convolution, https://blog.csdn.net/panglinzhuo/article/details/75207855
+
+
+General steps for training ANN with 随机梯度下降:
+    1. random init weights --- Dense function from keras
+    2. input first observation of dataset in input layer
+    3. forward-Propagation
+    4. measure generated error
+    5. back-Propagation
+    6. Repeat 1-5
+        1) Reinforcement Learning
+        2) Batch Learning
+    7. epochs
+

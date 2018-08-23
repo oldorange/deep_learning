@@ -1,0 +1,16 @@
+Optimizer: https://blog.csdn.net/g11d111/article/details/76639460
+    tf.train.Optimizer
+    tf.train.GradientDescentOptimizer
+    tf.train.AdadeltaOptimizer
+    tf.train.AdagradOptimizer
+    tf.train.AdagradDAOptimizer
+    tf.train.MomentumOptimizer
+    tf.train.AdamOptimizer
+    tf.train.FtrlOptimizer
+    tf.train.ProximalGradientDescentOptimizer
+    tf.train.ProximalAdagradOptimizer
+    tf.train.RMSPropOptimizer
+
+
+    others:
+    https://www.tensorflow.org/api_guides/python/train

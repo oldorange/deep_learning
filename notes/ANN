@@ -1,0 +1,32 @@
+1. pip install theano
+2. pip install tenserflow
+3. pip install keras
+4. sklearn.preprocessing
+    LabelEncoder, OneHotEncoder, StandardScaler:
+    标签编码， 独热编码， 特征缩放 => 作用：去均值和方差归一化。且是针对每一个特征维度来做的，而不是针对样本。 
+
+keras.layers.core.Dense(
+    output_dim, 
+    init='glorot_uniform', 
+    activation='linear', 
+    weights=None, 
+    W_regularizer=None, 
+    b_regularizer=None, 
+    activity_regularizer=None, 
+    W_constraint=None, 
+    b_constraint=None, 
+    bias=True, 
+    input_dim=None
+)
+
+1. output_dim：大于0的整数，代表该层的输出维度。模型中非首层的全连接层其输入维度可以自动推断，因此非首层的全连接定义时不需要指定输入维度。
+2. init：初始化方法，为预定义初始化方法名的字符串，或用于初始化权重的Theano函数。该参数仅在不传递weights参数时才有意义。
+3. activation：激活函数，为预定义的激活函数名（参考激活函数），或逐元素（element-wise）的Theano函数。如果不指定该参数，将不会使用任何激活函数（即使用线性激活函数：a(x)=x）
+4. weights：权值，为numpy array的list。该list应含有一个形如（input_dim,output_dim）的权重矩阵和一个形如(output_dim,)的偏置向量。
+5. W_regularizer：施加在权重上的正则项，为WeightRegularizer对象
+6. b_regularizer：施加在偏置向量上的正则项，为WeightRegularizer对象
+7. activity_regularizer：施加在输出上的正则项，为ActivityRegularizer对象
+8. W_constraints：施加在权重上的约束项，为Constraints对象
+9. b_constraints：施加在偏置上的约束项，为Constraints对象
+10. bias：布尔值，是否包含偏置向量（即层对输入做线性变换还是仿射变换）
+11. input_dim：整数，输入数据的维度。当Dense层作为网络的第一层时，必须指定该参数或input_shape参数。

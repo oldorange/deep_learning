@@ -1,0 +1,7 @@
+1. Simple Linear Regressions https://blog.csdn.net/Wing_93/article/details/78916547
+2. Mutiple Linear Regressions https://blog.csdn.net/zoinsung_lee/article/details/78526343
+3. exercises https://www.johnwittenauer.net/machine-learning-exercises-in-python-part-1/
+4. sklearn库中数据预处理函数fit_transform()和transform()的区别: https://blog.csdn.net/quiet_girl/article/details/72517053
+    OneHotEncoder: dummy var, encode categorical integer features
+5. 归一化(normalization)/标准化(standardization) 方法汇总 https://blog.csdn.net/u012969412/article/details/71309381, http://www.cnblogs.com/chaosimple/p/4153167.html
+6. 逻辑回归与正则化 Logistic Regression and Regularization https://www.cnblogs.com/yangmang/p/6352118.html
