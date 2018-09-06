@@ -67,3 +67,32 @@ classifier.fit_generator(training_set,
                          epochs = 25,
                          validation_data = test_set,
                          validation_steps = (2000/32))
+
+from keras.models import load_model
+model = load_model('cnn.h5')
+
+import numpy as np
+from keras.preprocessing import image
+test_image1 = image.load_img('dataset/single_prediction/cat_or_dog_1.jpg', target_size = (64, 64))
+test_image1 = image.img_to_array(test_image)
+test_image1 = np.expand_dims(test_image1, axis = 0)
+result1 = model.predict(test_image1)
+training_set.class_indices
+if result1[0][0] == 1:
+    prediction1 = 'dog'
+else:
+    prediction1 = 'cat'
+    
+print(prediction1)
+
+test_image2 = image.load_img('dataset/single_prediction/cat_or_dog_2.jpg', target_size = (64, 64))
+test_image2 = image.img_to_array(test_image2)
+test_image2 = np.expand_dims(test_image2, axis = 0)
+result2 = model.predict(test_image2)
+training_set.class_indices
+if result2[0][0] == 1:
+    prediction2 = 'dog'
+else:
+    prediction2 = 'cat'
+    
+print(prediction2)
