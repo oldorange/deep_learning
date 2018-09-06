@@ -74,7 +74,7 @@ model = load_model('cnn.h5')
 import numpy as np
 from keras.preprocessing import image
 test_image1 = image.load_img('dataset/single_prediction/cat_or_dog_1.jpg', target_size = (64, 64))
-test_image1 = image.img_to_array(test_image)
+test_image1 = image.img_to_array(test_image1)
 test_image1 = np.expand_dims(test_image1, axis = 0)
 result1 = model.predict(test_image1)
 training_set.class_indices
