@@ -1,5 +1,15 @@
 # Convolutional Neural Network
 
+
+
+#import tensorflow as tf
+#device_name = tf.test.gpu_device_name()
+#if device_name != '/device:GPU:0':
+#  raise SystemError('GPU device not found')
+#print('Found GPU at: {}'.format(device_name))
+
+
+
 # Installing Theano
 # pip install --upgrade --no-deps git+git://github.com/Theano/Theano.git
 
@@ -62,11 +72,11 @@ test_set = test_datagen.flow_from_directory('dataset/test_set',
                                             batch_size = 32,
                                             class_mode = 'binary')
 
-classifier.fit_generator(training_set,
-                         steps_per_epoch = (8000/32),
-                         epochs = 25,
-                         validation_data = test_set,
-                         validation_steps = (2000/32))
+#classifier.fit_generator(training_set,
+#                         steps_per_epoch = (8000/32),
+#                         epochs = 25,
+#                         validation_data = test_set,
+#                         validation_steps = (2000/32))
 
 from keras.models import load_model
 model = load_model('cnn.h5')
@@ -77,9 +87,10 @@ from keras.preprocessing import image
 test_image1 = image.load_img('dataset/single_prediction/cat_or_dog_1.jpg', target_size = (64, 64))
 test_image1 = image.img_to_array(test_image1)
 test_image1 = np.expand_dims(test_image1, axis = 0)
-result1 = model.predict_classes(test_image1)
-training_set.class_indices
-if result1[0][0] == 1:
+test_image1 = test_image1 * (1./255)
+result1 = model.predict(test_image1)
+
+if result1[0][0] > 0.5:
     prediction1 = 'dog'
 else:
     prediction1 = 'cat'
@@ -89,11 +100,25 @@ print(prediction1)
 test_image2 = image.load_img('dataset/single_prediction/cat_or_dog_2.jpg', target_size = (64, 64))
 test_image2 = image.img_to_array(test_image2)
 test_image2 = np.expand_dims(test_image2, axis = 0)
-result2 = model.predict_classes(test_image2)
-training_set.class_indices
-if result2[0][0] == 1:
+test_image2 = test_image2 * (1./255)
+result2 = model.predict(test_image2)
+
+if result2[0][0] > 0.5:
     prediction2 = 'dog'
 else:
     prediction2 = 'cat'
     
 print(prediction2)
+
+test_image3 = image.load_img('dataset/single_prediction/c2.jpg', target_size = (64, 64))
+test_image3 = image.img_to_array(test_image3)
+test_image3 = np.expand_dims(test_image3, axis = 0)
+test_image3 = test_image3 * (1./255)
+result3 = model.predict(test_image3)
+
+if result3[0][0] > 0.5:
+    prediction3 = 'dog'
+else:
+    prediction3 = 'cat'
+    
+print(prediction3)
