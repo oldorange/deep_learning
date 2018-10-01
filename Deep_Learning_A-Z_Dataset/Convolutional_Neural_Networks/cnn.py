@@ -110,7 +110,7 @@ else:
     
 print(prediction2)
 
-test_image3 = image.load_img('dataset/single_prediction/c2.jpg', target_size = (64, 64))
+test_image3 = image.load_img('dataset/single_prediction/c1.jpg', target_size = (64, 64))
 test_image3 = image.img_to_array(test_image3)
 test_image3 = np.expand_dims(test_image3, axis = 0)
 test_image3 = test_image3 * (1./255)
