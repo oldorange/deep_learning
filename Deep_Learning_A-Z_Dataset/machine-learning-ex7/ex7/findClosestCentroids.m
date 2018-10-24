@@ -21,7 +21,16 @@ idx = zeros(size(X,1), 1);
 % Note: You can use a for-loop over the examples to compute this.
 %
 
-
+for i = 1:size(X,1)
+    minMean = 9999999999;
+    for l = 1:K
+        mean = sum((X(i,:) - centroids(l,:)).^2);
+        if mean < minMean
+            idx(i) = l;
+            minMean = mean;
+        end
+    end
+end
 
 
 
